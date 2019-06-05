@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jet Fighter</title>
+
+</head>
+<style>
+    /*reset css*/
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #current-score {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #hp {
+        position: absolute;
+        top: 20px;
+        left: 0;
+    }
+    #instructor {
+        position: absolute;
+        top: 0px;
+        left: 85%;
+    }
+
+    #menu {
+        width: 160px;
+        height: 160px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style-type: none;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: #BBC1C2;
+        font-size: 20px;
+        line-height: 40px;
+        display: none;
+    }
+
+    #end-score {
+        line-height: 80px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    #restart {
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+</style>
+<body>
+<!--Load main screen-->
+<canvas id="canvas"></canvas>
+<!--Hiển thị điểm và điểm cao-->
+<p id = "current-score">Score: <span>0</span></p>
+<p id = "hp">Hp : <span>0</span></p>
+<p id = "instructor"><span>Click and Drag to Move </span></p>
+<!--Hiển thị menu end game-->
+<ul id="menu">
+    <li>Your Score</li>
+    <li id = "end-score">0</li>
+    <li id = "restart" onclick="replay()">Restart</li>
+</ul>
+
+
+<script src="js/Bullet.js"></script>
+<script src="js/Background.js"></script>
+<script src="js/Enemy.js"></script>
+<script src="js/Player.js"></script>
+<script src="js/GameBoard.js"></script>
+<script>
+    let game = new GameBoard();
+    game.init("JetFight");
+    main();
+</script>
+</body>
+</html>
