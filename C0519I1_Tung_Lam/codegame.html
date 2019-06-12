@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<h1>nhấn phím <--, --> để chơi</h1>
+<style>
+    canvas
+     {
+        background-color: lightblue;
+    }
+</style>
+<body>
+<canvas id="canvas" width="900" height="700" style="border:2px solid #ffdde2;"></canvas>
+<script src="gameBroad.js"></script>
+<script src="egg.js"></script>
+<script src="player.js"></script>
+<script>
+    let game = new Gameboard("canvas",900,500);
+    game.init();
+    main();
+</script>
+</body>
+</html>
